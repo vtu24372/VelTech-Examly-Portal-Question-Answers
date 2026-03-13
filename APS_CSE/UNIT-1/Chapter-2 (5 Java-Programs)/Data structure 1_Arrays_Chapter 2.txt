@@ -1,0 +1,260 @@
+ Single File Programming Question
+
+Write a program to delete the element from beginning of the array. You need to read the size and ‘n’ elements of an array. Perform the given operation. You should print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+An integer 'n' which is size of the array, and 'n' elements of array,
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+5
+1 2 3 4 5
+
+Output 1 :
+
+2 3 4 5 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+
+class DeleteAtBeginning{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[] arr = new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr[i]=s.nextInt();
+        }
+        
+        for(int i=1; i<n; i++){
+            System.out.print(arr[i]);
+            if(i<n-1) System.out.print(" ");
+        }
+        s.close();
+    }
+}
+
+ Single File Programming Question
+
+Write a program to delete an element at the end of the array. You need to read 'n' which is size of the array and 'n' elements of array. Delete the final element and print the elements of the array.
+
+Perform the given operation. Now, you have to print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+An integer 'n' which is size of the array, and, 'n' number of elements of array.
+Output format :
+
+The resulting array is printed on the screen.
+Sample test cases :
+Input 1 :
+
+5
+1 2 3 4 5
+
+Output 1 :
+
+1 2 3 4 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+
+class DeleteAtEnd{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int n =s.nextInt();
+        int[] arr=new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr[i]=s.nextInt();
+        }
+        
+        for(int i=0; i<n-1; i++){
+            System.out.print(arr[i]);
+            if(i<n-2) System.out.print(" ");
+        }
+        
+        s.close();
+        
+    }
+}
+
+ Single File Programming Question
+
+Write a program to delete an element at the end of the array. You need to read 'n' which is size of the array and 'n' elements of array. Delete the final element and print the elements of the array.
+
+Perform the given operation. Now, you have to print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+An integer 'n' which is size of the array, and, 'n' number of elements of array.
+Output format :
+
+The resulting array is printed on the screen.
+Sample test cases :
+Input 1 :
+
+5
+1 2 3 4 5
+
+Output 1 :
+
+1 2 3 4 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+class DeleteAtPosition{
+    public static void main(String[] args){
+        Scanner s =new Scanner(System.in);
+        int n =s.nextInt();
+        int[] arr=new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        
+        int position = s.nextInt();
+        
+        for(int i=position-1; i<n-1; i++){
+            arr[i] = arr[i+1];
+        }
+        
+        for(int i=0; i<n-1; i++){
+            System.out.print(arr[i]);
+        if(i<n-2) System.out.print(" ");
+        }
+        s.close();
+    }
+}
+
+ Single File Programming Question
+
+Write a program to delete the middle element of the array. You need to read ‘n’ elements of the array. Perform the given operation. You should print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+An integer 'n' which is size of the array and 'n' number of elements of array.
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+7
+1 2 3 4 5 6 7
+
+Output 1 :
+
+1 2 3 5 6 7 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+
+class deleteAtMiddle{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        
+        int n =s.nextInt();
+        int[] arr= new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr[i]=s.nextInt();
+        }
+        
+        int mid = n/2;
+        
+        for(int i=mid; i<n-1; i++){
+            arr[i]=arr[i+1];
+        }
+        
+        for(int i=0; i<n-1; i++){
+            System.out.print(arr[i]);
+        if(i<n-2) System.out.print(" ");
+            
+        }
+    }
+}
+
+ Single File Programming Question
+
+Write a  program to delete the given element of the array. You need to read the size and ‘n’ elements of the array and the element to be deleted. 
+
+
+Perform the given operation. If the element is deleted successfully, return true otherwise, return false. Assume that the input is available in random order. 
+
+
+
+Input format :
+
+An integer which is size of the array, followed by "n" number of integers and the element to be deleted are given as input.
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+7
+1 2 3 4 5 6 7
+5
+
+Output 1 :
+
+1 2 3 4 6 7 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+
+class Delete{
+    public static void main(String[] args){
+        Scanner s =new Scanner(System.in);
+        int n = s.nextInt();
+        int[] arr = new int[n];
+        
+        for(int i=0; i<n; i++){
+            arr[i] = s.nextInt();
+        }
+        
+        int key=s.nextInt();
+        boolean found=false;
+        int index=-1;
+        
+        for(int i=0; i<n; i++){
+            if(arr[i]==key){
+                found=true;
+                index=i;
+                break;
+            }
+        }
+        
+        if(found){
+            for(int i=index; i<n-1; i++){
+                arr[i]=arr[i+1];
+            }
+            
+            for(int i=0; i<n-1; i++){
+                System.out.print(arr[i]);
+                if(i<n-2) System.out.print(" ");
+            }
+        } else{
+            System.out.print("false");
+        }
+        
+        s.close();
+    }
+}

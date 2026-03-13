@@ -1,0 +1,244 @@
+ Single File Programming Question
+
+Write a Java program to find the smallest and largest number in the given array. You need to read the size and ‘n’ elements of the array. Perform the given operation and print the smallest and largest number in the same line separated by single space.
+Input format :
+
+The size and ‘n’ elements of the array are given as input .
+Output format :
+
+The smallest and largest numbers are printed on screen.
+Sample test cases :
+Input 1 :
+
+5 500 12 22 343 300
+
+Output 1 :
+
+12 500
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+
+class FindSmallestAndLargest{
+    
+    public static void main(String[] args){
+        Scanner s=new Scanner(System.in);
+        int n = s.nextInt();
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
+        for(int i=0; i<n; i++){
+            int num = s.nextInt();
+            
+            if(num < min) min = num;
+            
+            if(num > max) max = num;
+        }
+        System.out.print(min+" "+max);
+        s.close();
+    }
+}
+
+ Single File Programming Question
+
+You are given an integer array containing 1 to n, where one of the numbers from 1 to n, in the array is missing. You need to provide optimum solution to find the missing number. All numbers are unique in the array. 
+
+
+You need to read the size and ‘n’ elements of the array. 
+
+Write a Java program to perform the above operation and print the missing number.
+
+
+Input format :
+
+The size and ‘n’ elements of the array are given as input .
+Output format :
+
+The missing number is printed on screen.
+Sample test cases :
+Input 1 :
+
+5 5 4 2 1 6
+
+Output 1 :
+
+3
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+
+class FindMissing{
+    public static void main(String[] args){
+        Scanner s =new Scanner(System.in);
+        int n = s.nextInt();
+        int sum=0;
+        
+        for(int i=0; i<n; i++){
+            sum+=s.nextInt();
+        }
+        
+        int total =(n+1)*(n+2)/2;
+        System.out.print(total-sum);
+        s.close();
+    }
+}
+
+ Single File Programming Question
+
+Write a Java program to count the number of occurrences (or frequency) of each element in a sorted array. You need to read the size and ‘n’ elements of the array. You have to print the resulting array elements in the same line that are separated by a space.
+
+
+
+Input format :
+
+The size and ‘n’ elements of the array are given as input .
+Output format :
+
+The count the number of occurrences (or frequency) of each element is printed on screen.
+Sample test cases :
+Input 1 :
+
+8
+4 3 2 2 3 4 4 5
+
+Output 1 :
+
+3 2 2 1 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class CheckSequence{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[] a = new int[n];
+        
+        for(int i=0; i<n; i++)
+            a[i] = s.nextInt();
+        
+        
+        Arrays.sort(a);
+        
+        for(int i=1; i<n; i++){
+            if(a[i]!=a[i-1]+1){
+                System.out.print("false");
+                return;
+            }
+        }    
+            System.out.print("true");
+        
+    }
+}
+
+ Single File Programming Question
+
+Write a Java program to find all the peak elements in the given array and print the same. 
+
+
+The "peak element" is the element of the array which is greater than or equal to both of the neighbors. That is, if the element at [i] th index is greater than or equal to both neighbors at index [i-1] and [i+1], then, it is a peak element.  
+
+
+﻿You have to print the resulting peak elements in the same line, separated by space. The entire output has to be enclosed within { }.
+
+Input format :
+
+The size and ‘n’ elements of the array are given as input .
+Output format :
+
+A peak elements are printed on the screen.
+Sample test cases :
+Input 1 :
+
+5 4 10 20 40 15
+
+Output 1 :
+
+{ 40 }
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+class PeakElements{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[] a = new int[n];
+        
+        for(int i=0; i<n; i++)
+            a[i] = s.nextInt();
+        
+        System.out.print("{");
+        
+        for(int i=1; i<n-1; i++){
+            if(a[i]>=a[i-1] && a[i]>=a[i+1])
+            System.out.print(a[i]+" ");
+        }
+        
+        System.out.print("}");
+    }
+}
+
+ Single File Programming Question
+
+Write a Java program to find the local minima in array. An element is local minima, if it is less than both of the neighbours. You need to read the size and the elements of the array. Perform the given operation and print the local minima.
+
+
+		
+
+Input format :
+
+The size and ‘n’ elements of the array are given as input .
+Output format :
+
+A local minima is printed on the screen.
+Sample test cases :
+Input 1 :
+
+3 313 33 444
+
+Output 1 :
+
+33
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class LocalMinima{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[] a = new int[n];
+        
+        for(int i=0; i<n; i++)
+        a[i] = s.nextInt();
+        
+        for(int i=1; i<n-1; i++){
+            if(a[i]<a[i-1] && a[i]<a[i+1]){
+            System.out.print(a[i]);
+            return;
+            }
+        }
+    }
+}
+
+
+
