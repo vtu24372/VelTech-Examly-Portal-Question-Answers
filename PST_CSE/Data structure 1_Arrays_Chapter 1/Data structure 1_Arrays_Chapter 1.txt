@@ -1,0 +1,254 @@
+ Single File Programming Question
+
+Write a program to read five elements of an array and print the elements in the same line. While printing the array, the elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+Five integers are given as input.
+Output format :
+
+The given array is printed as it is, in the same order.
+Sample test cases :
+Input 1 :
+
+23 13 56 78 10
+
+Output 1 :
+
+23 13 56 78 10 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+
+class ArrayInSameLine{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int[] array = new int[5];
+        
+        for(int i=0; i<5; i++){
+            array[i] = s.nextInt();
+        }
+        
+        for(int i=0; i<5; i++){
+            if(i==4)
+                System.out.print(array[i]);
+             else
+                System.out.print(array[i]+ " ");
+            
+        }
+    }
+}
+
+ Single File Programming Question
+
+Write a program to read five elements of an array and insert an element at the beginning of the array. 
+
+
+Perform the given operation. And, print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+An integer array and another integer are given as input.
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+1 2 3 4 5 77
+
+Output 1 :
+
+77 1 2 3 4 5 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+class ArrayInsertAtBeginning{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int[] array = new int[5];
+        
+        for(int i=0; i<5; i++)
+        array[i] = s.nextInt();
+        
+        int Element  = s.nextInt();
+        System.out.print(Element+" ");
+        
+        for(int i=0; i<5; i++){
+            if(i==4)
+            System.out.print(array[i]);
+            else
+            System.out.print(array[i]+" ");
+        }
+    }
+}
+
+Single File Programming Question
+
+Write a program to read five elements of an array and insert an element at the end of the array. Perform the given operation. And, print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+An integer array and another integer are given as input.
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+1 2 3 4 5 10
+
+Output 1 :
+
+1 2 3 4 5 10 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class ArrayInsertAtEnd{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int[] array = new int[5];
+        
+        for(int i=0; i<5; i++)
+        array[i] = s.nextInt();
+        
+        for(int i=0; i<5; i++)
+        System.out.print(array[i]+" ");    
+        
+        int Element = s.nextInt();
+        System.out.print(Element+" ");
+    }
+}
+
+ Single File Programming Question
+
+Write a program to insert the given element at the given position of the array. You need to read "five" elements of the array. Also, read a new element and the position where the element to be inserted. 
+
+
+Perform the given operation. You have to print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+
+
+Input format :
+
+An integer array, an element to be inserted and the position are entered as input.
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+1 2 3 4 5
+10
+4
+
+Output 1 :
+
+1 2 3 10 4 5 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class ArrayInsertAtPosition{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int[] array = new int[6];
+        
+        for(int i=0; i<5; i++)
+        array[i] = s.nextInt();
+        
+        int element = s.nextInt();
+        int position = s.nextInt();
+        
+        for(int i=5; i>=position; i--){
+         array[i] = array[i-1];   
+        }
+        array[position-1] = element;
+        
+        for(int i=0; i<6; i++){
+        
+            if(i==5)
+                System.out.print(array[i]);
+                else 
+                System.out.print(array[i]+" ");
+            
+        } 
+    }
+}
+
+ Single File Programming Question
+
+Write a program to insert the given element at the middle position of the array. You need to read the size of array and elements of the array.  Also, read a new element. Perform the given operation. 
+
+
+﻿You should print the modified array elements in the same line. While printing the array, the array elements should be separated by a space and nothing is printed after the last element.
+Input format :
+
+The size of the array, followed by the array and element X, which has to be inserted in the middle of the array.
+Output format :
+
+The resulting array is printed on screen.
+Sample test cases :
+Input 1 :
+
+5
+1 2 3 4 5
+-7
+
+Output 1 :
+
+1 2 -7 3 4 5 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class InsertAtMiddle{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int n =s.nextInt();
+        int[] array = new int[n+1];
+        
+        for(int i=0; i<n; i++)
+            array[i] = s.nextInt();
+            
+            int x = s.nextInt();
+            int mid = n/2;
+            
+            for(int i=n; i>mid; i--){
+                array[i] = array[i-1];
+            }
+            array[mid] = x;
+            
+            for(int i=0; i<n+1; i++){
+                
+                if(i==n)
+                    System.out.print(array[i]);
+                else
+                    System.out.print(array[i] + " ");
+                
+            }
+    }
+}
+
+
+
+

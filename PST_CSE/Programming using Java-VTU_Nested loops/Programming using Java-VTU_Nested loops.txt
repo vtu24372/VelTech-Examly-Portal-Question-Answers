@@ -1,0 +1,224 @@
+ Single File Programming Question
+
+Write a program to remove all the spaces in the given sentence.
+Input format :
+
+Input to get a sentence from the user.
+Output format :
+
+The output displays the sentence after removing the spaces.
+Sample test cases :
+Input 1 :
+
+kite in the cloud
+
+Output 1 :
+
+kiteinthecloud
+
+Input 2 :
+
+networking
+
+Output 2 :
+
+networking
+
+Code Size : 1024 kb
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+class RemoveSpaces{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.print(s.replace(" "," "));
+    }
+}
+
+
+ Single File Programming Question
+
+Mobile number validation
+
+ Let's implement the logic for mobile number validation using StringBuilder and embed it in our program. Mobile number should precede with "+91", followed by 10 digits. The indexOf() method returns index of given character value or substring. If it is not found, it returns -1. Write a program to validate the mobile number given as input. Use indexOf() to check whether "+91" is present or not.
+
+Create a driver class called Main. In the Main method, obtain the inputs from the console, validate the mobile number and prompt the user as given in sample I/O.
+Input format :
+
+Input consist of a mobile number
+Output format :
+
+Output prints whether the mobile number is valid or not
+Sample test cases :
+Input 1 :
+
++919874653210
+
+Output 1 :
+
+Mobile number valid
+
+Input 2 :
+
+9874653210
+
+Output 2 :
+
+Mobile number invalid
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+class MobileNumberValidation{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder(sc.nextLine());
+        String p = sb.substring(0,3);
+        
+        if(sb.indexOf("+91")==0 && p.compareTo("+91")==0 && sb.length()==13)
+            System.out.print("Mobile number valid");
+         else
+            System.out.print("Mobile number invalid");
+        
+    }
+}
+
+
+ Single File Programming Question
+
+Write a program to remove consecutive vowels from a string.
+Input format :
+
+Input to get a string.
+Output format :
+
+the output displays the string after removing consecutive vowels from it.
+Sample test cases :
+Input 1 :
+
+cool
+
+Output 1 :
+
+col
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+
+class RemoveConsecutiveVowels{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String v ="aeiouAEIOU";
+        String result = "";
+        
+        for(int i=0; i<s.length(); i++){
+            
+            if(i>0 && v.indexOf(s.charAt(i))!=-1 && v.indexOf(s.charAt(i-1))!=-1)
+            continue;
+            result += s.charAt(i);
+        }
+        
+        System.out.print(result);
+    }
+}
+
+ Single File Programming Question
+
+Write a program to convert a String to an int.
+
+Note: If the string contains character then print 0.
+
+Eg. a1b2 here the input contains character, so conversion is not possible.
+Input format :
+
+A number as string
+Output format :
+
+Integer converted from string
+Sample test cases :
+Input 1 :
+
+234
+
+Output 1 :
+
+234
+
+Input 2 :
+
+a12
+
+Output 2 :
+
+0
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+class ConvertStrintToInt{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s =  sc.next();
+        
+        for(int i=0; i<s.length(); i++){
+            if(! Character.isDigit(s.charAt(i))){
+                System.out.print(0);
+                return;
+            }
+        }
+        System.out.print(Integer.parseInt(s));
+    }
+}
+
+ Single File Programming Question
+
+toLowerCase()
+
+When we get the usernames for the user in their profiles, some may enter in uppercase, some in lowercase, some in mixed cases. Now we don't want that, we want uniformity in the usernames if we are gonna present a legible report. So let's write a program that converts all the letters of the username into lowercase.
+Input format :
+
+Input consist of a string
+Output format :
+
+Output prints the string in lowercase
+Sample test cases :
+Input 1 :
+
+WELCOME COIMBATORE
+
+Output 1 :
+
+welcome coimbatore
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.Scanner;
+import java.util.*;
+
+class CovertToLowerCase{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        
+        System.out.print(s.toLowerCase());
+    }
+}

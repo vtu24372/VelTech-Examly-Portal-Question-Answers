@@ -1,0 +1,476 @@
+ Single File Programming Question
+
+Write a Java method that performs the run length encoding for a given String and returns the run length encoded String.
+
+
+You just need to count the number of times a character is occurring and concat it after the char. Repeat the process for all unique characters in the given string and return the final answer.
+
+
+Sample input: ABBBB
+
+
+Sample output: A1B4
+
+
+Explanation:  Character A occurs 1 time, and character B occurs 4 times. Hence, the answer is printed as A1B4.  
+Input format :
+
+One string is given as input
+Output format :
+
+One string is printed on the screen
+Sample test cases :
+Input 1 :
+
+ABBCCC
+
+Output 1 :
+
+A1B2C3
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class RunLengthEncoding{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s =sc.next();
+        String result ="";
+        int count =1;
+        
+        for(int i=0; i<s.length(); i++){
+            
+            if(i<s.length()-1 && s.charAt(i)==s.charAt(i+1))
+            count++;
+            
+            else{
+                result += s.charAt(i)+""+count;
+                count =1;
+            }
+        }
+        
+        System.out.println(result);
+    }
+}
+
+ Single File Programming Question
+
+Write a Java method that performs the encoding for a given String as explained below and returns a factorial of the maximum count.
+
+
+You just need to count the number of times a character is occurring and find the maximum count among them. Find the factorial for that number and return the answer.
+
+
+Sample input: ABBBB
+
+
+Sample output: 24
+
+
+Explanation:  Character A occurs 1 time, and character B occurs 4 times. The maximum value is 4 and 4! = 24. Hence, 24 is printed.  
+
+
+Note on finding the factorial: 
+
+
+ 	Factorial of N = N * (N-1) * (N-2) * ... * 1 
+
+Factorial of 1 = 1 
+
+ 	Factorial of 4 = 4 * 3 * 2 * 1 = 24 
+
+ 	Factorial of 5 = 5 * 4 * 3 * 2 * 1 = 120 
+Input format :
+
+One string is given as input
+Output format :
+
+One integer is printed on the screen
+Sample test cases :
+Input 1 :
+
+ABBCCC
+
+Output 1 :
+
+6
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class FactorialOfMaxCount{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s=sc.next();
+        int max=0;
+        
+        for(char c:s.toCharArray()){
+            int count =0;
+            
+            for(char d:s.toCharArray()){
+                if(c==d) count++;
+                if(count>max) max=count;
+            }
+        }
+        
+        int fact=1;
+        for(int i=1; i<=max; i++){
+            fact*=i;
+        }
+        System.out.print(fact);
+    }
+}
+
+ Single File Programming Question
+
+Write a Java method that performs the encoding for a given String as explained below and returns a factorial of the minimum count.
+
+
+You just need to count the number of times a character is occurring and find the minimum count among them. Find the factorial for that number and return the answer.
+
+
+Sample input: ABBBB
+
+
+Sample output: 1
+
+
+Explanation:  Character A occurs 1 time, and character B occurs 4 times. The minimum value is 1 and 1! = 1. Hence, 1 is printed.  
+
+
+Note on finding the factorial: 
+
+
+ 	Factorial of N = N * (N-1) * (N-2) * ... * 1 
+
+Factorial of 1 = 1 
+
+ 	Factorial of 4 = 4 * 3 * 2 * 1 = 24 
+
+ 	Factorial of 5 = 5 * 4 * 3 * 2 * 1 = 120 
+Input format :
+
+One string is given as input
+Output format :
+
+One integer is printed on the screen
+Sample test cases :
+Input 1 :
+
+ABBCCC
+
+Output 1 :
+
+1
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class FactOfMinimumCount{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        
+        int min=s.length();
+        for(char c: s.toCharArray()){
+            int count=0;
+            
+            for(char d: s.toCharArray()){
+                if(c==d) count++;
+            }
+                
+                if(count < min) min=count;
+            }
+        
+        int fact=1;
+        for(int i=1; i<=min; i++){
+            fact*=i;
+        }
+        
+        System.out.print(fact);
+        
+    }
+    
+ Single File Programming Question
+
+Care hospital wants to know the medical specialty visited by the maximum number of patients. The details of the medical specialties are as follows: {“P":"Pediatrics", "O":"Orthopedics", "E":"ENT}
+
+
+Assume that the patient id of the patient along with the medical specialty visited by the patient is stored in a String variable. 
+
+Write a Java method to find the medical specialty visited by the maximum number of patients and return the name of the specialty. 
+
+
+Note 1: Assume that there is always only one medical specialty that is visited by a maximum number of patients.
+
+Note 2: Perform case-sensitive string comparison wherever necessary.
+
+Note 3:   input is a String where the values are separated by a comma.
+
+
+Sample input: 
+
+ list=“101,O,102,E,302,P,305,P,401,E,656,O,987,E"
+
+
+Sample output: 
+
+           ENT 
+
+
+Explanation: 
+
+In the given list, more patients visited the E department which means the ENT department. Hence, ENT is printed as the answer.
+Input format :
+
+One string is given as input
+Output format :
+
+One String is printed on the screen
+Sample test cases :
+Input 1 :
+
+1,E,1,O,1,P,2,P
+
+Output 1 :
+
+Padiatrics
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
+
+import java.util.*;
+import java.util.Scanner;
+
+class PatientMaxCount{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String[] a = s.split(",");
+        
+        int p=0,o=0,e=0;
+        
+        for(int i=1; i<a.length; i+=2){
+            if(a[i].equals("P")) p++;
+            else if(a[i].equals("O")) o++;
+            else if(a[i].equals("E")) e++;
+        }
+        
+        if(p>o && p>e) System.out.print("Padiatrics");
+        
+        else if(o>p && o>e) System.out.print("Orthopedics");
+        
+        else System.out.print("ENT");
+    }
+}
+ 
+
+ Single File Programming Question
+
+Write a Java method to display all the unique and common characters among two strings that are separated by a comma. Return none if there are no matching characters. The common and unique characters have to be sorted in ascending order.
+
+
+Note: 
+
+1) Ignore blank spaces in the input, if there are any. 
+
+2) Perform case-sensitive string comparison wherever necessary.
+
+3) The input string will not be empty.
+
+
+Sample input: 
+
+moto,welcome
+
+
+Sample output: 
+
+mo
+
+
+Explanation:
+
+m and o are the common characters between the given two words. If we sort them in ascending order, we get, mo. 
+Input format :
+
+A String that two words which are separated by a comma.
+Output format :
+
+A String is printed on the screen
+Sample test cases :
+Input 1 :
+
+moto,welcome
+
+Output 1 :
+
+mo
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class UniqueCharacters{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().replace("","");
+        String[] a = s.split(",");
+        
+        Set<Character> set = new TreeSet<>();
+        
+        for(char c:a[0].toCharArray()){
+            if(a[1].indexOf(c)!=-1)
+            set.add(c);
+        }
+        
+        if(s.isEmpty()) System.out.print("None");
+        for(char c:set){
+            System.out.print(c);
+        }
+    }
+}
+
+ Single File Programming Question
+
+Write a Java method to display all common vowel characters among two words. Return none if there are no matching characters. Note that, the common characters have to be sorted in ascending order.
+
+
+Note: 
+
+1) The input string will not be empty. The input words are separated by a comma. 
+
+2) Ignore blank spaces in the input, if there are any. 
+
+3) Perform case-sensitive string comparison wherever necessary.
+
+
+Sample input: 
+
+moto,welcome
+
+
+Sample output: 
+
+o
+
+
+Explanation:
+
+The char 'o' is the common character between the given two words. So, we get, o as output. 
+Input format :
+
+An input String with two words that are separated by a comma.
+Output format :
+
+An output String is printed on the screen
+Sample test cases :
+Input 1 :
+
+moto,welcome
+
+Output 1 :
+
+o
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+
+class CommonVowel{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().replace(" "," ");
+        String[] a = s.split(",");
+        
+        String vowel = "aeiou";
+        
+        Set<Character> set = new TreeSet<>(); 
+        
+        for(char c: a[0].toCharArray()){
+            if(vowel.indexOf(c)!=-1 && a[1].indexOf(c)!=-1)
+            set.add(c);
+        }
+        
+        if(set.isEmpty()) System.out.print("None");
+        else for(char c:set) System.out.print(c);
+    }
+}
+
+
+ Single File Programming Question
+
+Consider the following small bilingual (English-Swedish) glossary given below as a dictionary.
+
+{"merry":"god", "christmas":"jul", "and": "och", "happy": "gott", "new": "nytt", "year": "ar"} 
+
+And use it to translate your messages from English into Swedish. 
+
+
+Write a Java method that uses the above bilingual dictionary and translates a list of English words into equivalent Swedish words separated by a comma.
+
+
+Sample input: "merry,christmas"
+
+Sample output: “god,jul”       
+
+Explanation: Word translation is done as per the given dictionary. 
+
+The word "merry" is replaced with "god". The word "christmas" is replaced by "jul". 
+Input format :
+
+An input String has two words which are separated by a comma.
+Output format :
+
+An output String is printed on the screen
+Sample test cases :
+Input 1 :
+
+christmas,christmas
+
+Output 1 :
+
+jul,jul
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+
+class SmallBilingual{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String[] a = s.split(",");
+        
+        Map<String, String> map = new HashMap<>();
+        map.put("merry","god");
+        map.put("christmas","jul");
+        map.put("and","och");
+        map.put("happy","gott");
+        map.put("new","nytt");
+        map.put("year","ar");
+        
+        System.out.println(map.get(a[0])+","+map.get(a[1]));
+    }
+}
+
