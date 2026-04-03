@@ -1,0 +1,232 @@
+ Single File Programming Question
+
+Write a program that implements a stack using an array. Start with an empty stack and push 'n' values into the stack. After pushing the values, print the resulting stack.  
+
+Note: While printing the stack, ensure that the elements are separated by a space, and nothing is printed after the last element.
+Input format :
+
+Line:1 Size of the Stack
+
+Line:2 The values of Stack
+Output format :
+
+Print the resulting elements of the stack in same line seperated by comma.
+Sample test cases :
+Input 1 :
+
+5
+1
+2
+3
+4
+5
+
+Output 1 :
+
+1 2 3 4 5
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+import java.util.Scanner;
+
+class PushWithStack{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        Stack <Integer> s = new Stack<>();
+        
+        for(int i=0; i<n; i++){
+            s.add(sc.nextInt());
+        }
+        
+        for(int i : s)
+        System.out.print(i + " ");
+            
+        
+    }
+}
+
+ Single File Programming Question
+
+Write a program to implement the Stack using an array. Given a stack consisting of ‘n’ elements, perform ‘m’ number of pop operations and print the resulting stack. 
+
+
+Note: While printing the stack, the elements have to be separated by a space and nothing is printed after the last element. Assume, that m < n.
+Input format :
+
+An integer 'n', followed by 'n' integers representing 'n' values of the array, and another interger 'm' are given as input.
+Output format :
+
+Print the resulting stack on the screen.
+Sample test cases :
+Input 1 :
+
+5
+1 2 3 4 5
+3
+
+Output 1 :
+
+1 2 
+
+Input 2 :
+
+8
+8 7 6 5 4 3 2 1
+6
+
+Output 2 :
+
+8 7 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+
+class PopUsingStack{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        
+        int n = s.nextInt();
+        int[] a = new int[n];
+        
+        for(int i=0; i<n; i++)
+        a[i] = s.nextInt();
+        
+        int m = s.nextInt();
+        
+        for(int i=0; i<n-m; i++){
+            if(i==n-m-1)
+            System.out.print(a[i]);
+            else
+            System.out.print(a[i] + " ");
+        }
+    }
+}
+
+ Single File Programming Question
+
+Write a program to implement the Queue using an array. Given an empty queue, add ‘n’ values into the queue and print the resulting queue.  While printing the queue, the elements have to be separated by a space and nothing is printed after the last element. 
+
+
+Input format :
+
+You need to read ‘n’, the array elements, and perform the enqueue operations
+
+
+Output format :
+
+Print the resulting queue on the screen.
+Sample test cases :
+Input 1 :
+
+5
+5 4 3 2 1
+
+Output 1 :
+
+5 4 3 2 1 
+
+Input 2 :
+
+6
+10 20 30 60 50 40 
+
+Output 2 :
+
+10 20 30 60 50 40 
+
+Note :
+The program will be evaluated only after the “Submit Code” is 
+
+import java.util.*;
+
+class Enqueue{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        
+        Queue<Integer> p = new LinkedList<>();
+        
+        int n = s.nextInt();
+        int[] a = new int[n];
+        
+      for(int i=0; i<n; i++)
+          p.add(s.nextInt());
+          
+          for(int i=0; i<n; i++){
+              
+              if(i==n-1)
+              System.out.print(p.poll());
+              else
+              System.out.print(p.poll() + " ");
+          }
+    }
+}
+
+ Single File Programming Question
+
+Write a program to implement the Queue using an array. Given a queue consisting of ‘n’ elements, perform ‘m’ number of deque operations and print the resulting queue. 
+
+
+Note: While printing the queue, elements have to be separated by a space and nothing is printed after the last element.
+Input format :
+
+You need to read ‘n’, the array, and the ‘m’ as input. Assume, that m < n.
+
+
+Output format :
+
+Print the resulting queue on the screen.
+Sample test cases :
+Input 1 :
+
+5
+1 2 3 4 5
+3
+
+Output 1 :
+
+4 5 
+
+Input 2 :
+
+10
+1 2 3 4 5 6 7 8 9 10
+4
+
+Output 2 :
+
+5 6 7 8 9 10 
+
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case. 
+
+import java.util.*;
+
+class Dequeue{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        
+        int n = s.nextInt();
+        int[] a = new int[n];
+        
+        for(int i=0; i<n; i++)
+        a[i] = s.nextInt();
+        
+        int m = s.nextInt();
+        
+        for(int i=m; i<n; i++){
+            if(i==n-1)
+            System.out.print(a[i]);
+            else
+            System.out.print(a[i] + " ");
+        }
+    }
+}
